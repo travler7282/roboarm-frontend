@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import './App.css';
+import { clampGlobalPosition } from './position-utils';
 
 // Define the 6-servo joint state
 interface ArmState {
@@ -84,8 +85,6 @@ const DEFAULT_LIMITS: Record<ArmJoint, JointLimit> = {
   gripperRotate: { min: 0, max: 3000 },
   gripperClaw: { min: 0, max: 3000 },
 };
-
-export const clampGlobalPosition = (value: number) => Math.max(0, Math.min(3000, Math.round(value)));
 
 const App: React.FC = () => {
   const currentHostDefault = useMemo(() => {

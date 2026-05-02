@@ -7,15 +7,11 @@ function handler(event) {
         return request;
     }
 
-    // 2. Logic for sub-app routing
-    if (uri.startsWith('/roboarm')) {
-        request.uri = '/roboarm/index.html';
-    } else if (uri.startsWith('/wxstation')) {
-        request.uri = '/wxstation/index.html';
-    } else if (uri.startsWith('/sdrx')) {
-        request.uri = '/sdrx/index.html';
+    // 2. Logic for RoboArm SPA routing
+    if (uri.startsWith('/apps/roboarm')) {
+        request.uri = '/apps/roboarm/index.html';
     } else {
-        // 3. Fallback for the main landing page
+        // 3. Fallback to the same app entrypoint for deep links
         request.uri = '/index.html';
     }
 

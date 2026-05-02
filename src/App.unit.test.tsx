@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { clampGlobalPosition } from './App';
+import { clampGlobalPosition } from './position-utils';
 
 describe('clampGlobalPosition', () => {
   it('clamps to lower bound', () => {
